@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Aula 2 - JS</title>
+		<script type="text/javascript" src="./js/aula2.js">
+		</script>
+	</head>
+	<!--<body onload="alert('Pagina Carregada'); ">-->
+	<body>
+	<p>Nome: Sérgio</p>
+	<img id="cristovao" onclick="alert('Img clicada!!!');" src="./Aula2/a.png" alt="Gozzila" />
+	</body>
+</html>
+
+<!--
+Eventos
+Em linguagem orientadas a objetos é comum a manipulação de eventos, isto é, qlq reação ou acção que executará um procedimento.
+Normanente ocorre por ato despoletado(executado) pelo cliente(utilizador do site), por exemplo: clicar num botão, selecionar um objeto, pressiona uma tecla, etc.
+Por exemplo:
+// Add o evento de leitura ou carregamento da página, normalmente ocorre quando o body é TOTALMENTE carregado.
+<body onload="alert('Pagina Carregada');">
+Explicação:
+Após carreagar totalmente a pagina é invocado o objeto window que executara a ação de alert().
+--------------------------------
+Add o evento de click, neste caso sobre a img
+Exemplo : onclick="alert('Img clicada!!!');"
+--------------------------------
+Comentarios:
+// comentario em linha
+/* */ multi-linha
+-------------------------------
+Variaveis
+Criação : A variavel só pode começar por caracteres letras(A-Z ou a-z), _, $, mais nunhem caracteres
+IMPORTANTE: Case sensitive(), não podemos instanciar nome reservados, new(palavra reservada), _new
+Exemplo pratico de atribuição multi-valor
+var campo_1 = campo_2 = campo_3 = 12;
+
+/*DINAMIZAÇÂO DAS VARIAVEIS */
+O JS é uma linguagem de tipagem dinamica, isto é, não é necessario especificar o tipo de dados dum variavel aquando da sua declaração. Os tipos são automaticamente convertidos conforme a atribuição.
+--------------------------------------
+Variaveis Inteiras(INTEGER) ou Number
+Representam numeros positivos, negativos ou fraccionarios.
+Exemplo:
+var a = 500;
+var b= -32;
+var z = 0.52;
+Ponto flutuante(notação cientifica)
+Este literal, tambem conhecido como notação cientifica representamos:
+var nc = 2.34e4;// 2.34 é multiplicado por dez à quarta potencia(10^4= ((10*10)*10)*10): ou 2.34*10000 
+----------------------------------------
+BOOLEAN
+Este literal representa valore lógicos:
+true ou 1;
+false ou 0.
+var b = true;
+	b = false;
+	b = 12;
+----------------------------------------
+STRING
+Esteliteral representa qlq cadeia de carateres envolvidos por aspas"" ou apostrofo''.
+var str = "Pedro";
+var str_1 = "";// vazio
+var str_2;// null
+Sendo números, acontece que a conversão é feita de forma automatica.
+Exemplo:
+var v = "12";
+<>
+var v_1 = 12;
+**********************************
+CARATERES ESPECIAIS
+
+Carateres especificados para serem interpretados dentro duma string.
+\n -> quebra de linha
+\t -> tabulação
+\f -> inserir a barra
+\\ -> barra invertida
+---------------------------------
+OPERADORES
+---------------------------------
+INCREMENTO e DECREMENTO
+SINTAXE: 
+	variavel++ ou ++variavel;
+	variavel-- ou --variavel;
+RELACÃO DOS OPERADORES(sobrecarga dos operadores)
++;-;*;/;%
+EXEMPLO: 
+	var x = 12;
+		x += 4;// x = x + 4;
+		x++; // x += 1 ou x = x + 1;
+----------------------------------
+Operadores Relacionais
+Estes operadores comparam o conteudo dos operandos e retornam um valor boolean(true or false), em função do resultado da comparação.
+> -> maior
+< -> menor
+>= -> maior igual
+<= -> menor igual
+== -> igualdade
+!= -> diferente
+var res = (1 == 2);
+alert("Res->"+ res);
+alert("Res->"+ (1 == 2));
+---------------------------------
+OPERADORES LOGICOS
+PAra estes operadores, são exigidos valores booleanos, como operandos, retorna um valor logico.
+&& ou AND(e) -> verdade se todas as expressoes forem verdade
+TABELA
+Duas expressões
+V V = V
+V F = F
+F V = F
+F F = F
+Tres Expressões
+V V V = V
+V F V = F
+F V F = F
+F F F = F
+|| ou OR(ou) -> verdade se uma das expressoes for verdade
+V V = V
+V F = V
+F V = V
+F F = F
+Tres Expressões
+V V V = V
+V F V = V
+F V F = V
+F F F = F
+! ou NOT(negação)-> nega a expressao , se for verdade torna mentira.
+V -> F
+F -> V
+Exemplo:
+var x = 1;
+alert((x >= 2) && (x <= 1));
+		F			 V   =	F
+alert((x >= 2) || (x <= 1));
+		F			 V   =	V
+var z = 2;
+alert(!(z>=2));
+		V   = F
+----------------------------------
+OPERADOR DE CONCATENAÇÃO DE STRING
+USamos o carater '+' para concatenar cadeias de carateres(strings)
+var x = "Pedro";
+var y = "Pita";
+var z = x+" "+y;// Pedro Pita 
+alert(z);
+
+var a = "Idade:";
+var idade = 56;
+var aidade = a+idade;//Idade:56
+---------------------------------------
+OPERADOR TERNARIO
+Sinatxe: (Expressao)? verdade : falso;
+var num = 1;
+var test = ((num == 1) ? "Igual" : "Diferente");
+alert(test);
+VARIOS TERNARIOS
+var teste1 = ((num == 1) ? "Igual a 1" : (num == 2) ? "Igual a 2" : "Diferente");
+alert(teste1);
+
+Varias var inicializadas na mesma atribuição
+var num = 1, nome ="Pedro", morada="funchal";
+----------------------------------------------
+CONSTANTES
+Valor que nunca se altera no processamento da app.
+Por norma, devemos aplicar maiusculas a constantes de modo a facilmente identificarmos.
+SINTAXE: const nome = valor_constante;
+Exemplo.
+const SEMANA = 7;
+alert(SEMANA);
+---------------------------------------------
+Receber mensagem via caixa de texto input
+var rec = prompt("Minha mensagem","Insira aqui o texto");
+alert("o texto digitado foi: " + rec);
+******************************************
+Modos de leitura da rotina Javascript:
+INLINE
+<body onload="alert('Pagina carreagda');">
+-------------------------------------------
+INCORPORADA
+<script type="text/javascript">
+	var x = 12;
+	alert(x);
+</script>
+------------------------------------------
+EXTERNO
+<script type="text/javascript" src="./js/aula1.js">
+</script>
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+

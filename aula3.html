@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Aula 3 - Estruturas</title>
+		<script type="text/javascript" src="./js/aula3.js">
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+
+<!--
+ESTRUTURAS
+-------------------------------------------------
+Contexto de intrução:
+Numa instrução simples, aninhamos o codigo, isto é sem bloco de contexto.
+Numa instrução em bloco(mais que um comando), delimitamos a instrução com chavetas({}).
+-------------------------------------------------
+Estruturas condicionais - processam resultado em função de um determinado teste
+
+SINTAXE:
+se(condição) entao fazer
+senão entao fazer
+Codigo
+if(condição)
+
+EXEMPLO:
+var num = 1;
+if( num > 1){
+	alert("O valor de teste é maior que 1.");
+}
+// Ex2 -  testa par ou impar
+num = 20;
+if((num % 2) == 0){
+	document.write("<p>O valor é par.</p>");
+}
+-----------------------------------------
+teste de condição verdadeira(boolean)
+var verdade = true;
+if(verdade){
+	alert("Entrou no ciclo, uma vez que a condição é verdadeira.");
+}
+-----------------------------------------
+instrução completa de if/else simples
+var num = 3;
+if(num == 1){alert("num igual a 1.");}
+else if(num == 2){alert("num igual a 2.");}
+else if(num == 3){alert("num igual a 3.");}
+else{alert("Num diferente de 1,2,3");}
+-----------------------------------------
+Com input(entrada) externo
+var idade = prompt("Caixa de input","Insira a idade.");
+if(idade <= 10){alert("A idade é inferior a 10");}
+else if(idade > 10 && idade <= 20){alert("A idade é superior ou igual a 11 e inferior a 20");}
+else if(idade > 20 && idade <= 30){alert("A idade é superior ou igual a 21 e inferior a 30");}
+else{alert("A idade é superior a 31 anos");}
+---------------------------------------------
+Instrução if encadeadas
+var idade = prompt("Caixa de input","Insira a idade.");
+if(idade <= 10){
+	alert("A idade é inferior a 10");
+}else if(idade > 10 && idade <= 20){
+	alert("A idade é superior ou igual a 11 e inferior a 20");
+}else if(idade > 20 && idade <= 30){
+	if(idade > 24 && idade <= 30){
+	alert("A idade é superior ou igual a 25 e inferior a 30");
+	}else if(idade == 22) {alert("Idade=22");}
+}else{
+	if(idade > 60){
+		alert("A idade é superior a 60 anos");
+	}else{
+		alert("Tem no minimo 31 e menos de 61anos");
+	}
+}
+--------------------------------------------
+Estrutura Switch(selecção)
+Usa-se o switch(em relação ao if) qunado a condição(expressao) é a mesma, mas poderá ter diferentes valores de teste.
+BREAK: indica paragem de execução na estrutura no ponto onde é invocado.
+var teste = 2;
+switch(teste){
+	case 1:
+		alert("1");
+		break;
+	case 2:alert("2");break;
+	case 3:alert("3");break;
+	default:alert("Outro valor!");
+}
+-------------------------------------
+Grupos de dados com 'cases' multiplos(sem quebras)
+var teste = "valor1a";
+switch(teste){
+	case "valor1a":
+	case "valor1b":
+	case "valor1c":alert("O valor 1");break;
+	case "valor2a":
+	case "valor2b":
+	case "valor2c":alert("O valor 2");break;
+	default:alert("Valor de teste default!");
+}
+NOTA: Forçar a quebra mesmo em grupos de escolha:
+Se por algum motivo fosse necessario quebrar uma determinada escolha, por exemplo 'case "valor1a":' a linha passaria a ser a seguinte:
+case "valor1a":break;
+**************************************************
+Estruturas de repetição
+-------------------------------------
+Estruturas de repetição FOR, repetem um ciclo enquanto a condição for verdadeira.
+SINTAXE:
+for(Inicialização da variavel; teste de condição(enquanto for verdade);incremento da variavel){
+	rotina de execução(acção);
+}
+Exemplo:
+for(var i = 0; i < 10 ; i++){
+	alert("O valor do indice é: "+i);
+	document.write("O valor do indice é: "+i);
+}
+NOTA: Procedimeno da rotina - Iniciar a variavel, verificar a condição da variavel como verdadeira, executar a acção e incrementar a variavel de ciclo. 
+--------------------------------------
+Contagem
+var contagem = "Contagem:";
+for(var i = 0; i < 10; i++){
+	contagem = contagem + i;
+	alert(i);
+}
+// OU
+var contagem = "Contagem:";
+for(var i = 0; i < 10; i++){
+	contagem += i + "->";
+	alert(i);
+}
+// OU
+var contagem = "Contagem:";
+for(var i = 0; i < 10; i++){
+	if(i < 9)
+		contagem += i + "->";
+	if(i == 9)
+		contagem += i;
+	alert(i);
+}
+-----------------------------
+verficar pares e impares
+var par = "Par:";
+var impares = "Impares: "; 
+for(var i = 0; i <=40 ; i++){
+	//if(!(i%2))
+	if(i % 2 == 0){
+		if(i==40){
+			par += i;
+		}else{
+			par += i + "-";
+		}
+	}else{
+		impares += i;
+	}
+}
+alert(par);
+alert(impares);
+NOTA:
+Cuidado com instruções de ciclo infinito, uma vez que o laço seria executado de forma permanente.
+EXEMPLO:
+for(var i = 0;true;i++);
+----------------------------------
+Repetição em ciclo de objetos
+for in(repetição em objetos)
+Instrução:
+for(variavel in objeto){
+	codigo de execuçÕ(instrução) em objetos
+}
+Criar um objeto
+var Pessoa =
+{
+	nome: "Sérgio",
+	idade: "22",
+	morada:"Funchal"
+};
+alert(typeof(Pessoa));
+alert(typeof(Pessoa.nome));
+for(var atributos in Pessoa){
+	alert(atributos+":"+Pessoa[atributos]);
+}
+---------------------------------------
+Repetição com estrututa while
+Sintaxe:
+while(){...}
+
+Rotina:
+A estrutura realiza o teste antes de executar o codigo de acção, contino no bloco de instruções, a inicilização da variavel é fora do ciclo, o incremento feito na rotina de acções.
+Conversão do for:
+for(var i = 0 ; i< 10 ; i++){
+	alert(i);
+}
+Para while:
+var i = 0;
+while(i < 10){
+	alert(i);
+	i++;
+}
+Exemplo:
+var i = 0;
+var contagem = "Contagem:";
+while(i < 6){
+	contagem += i;
+	i++;
+}
+alert(contagem);
+--------------------------------------
+do{....codigo de acções...}while(teste);
+Rotina:
+Faz a execução do codigo apenas no final do ciclo, isto é, executa pelo menos uma vez.
+Usamos quando não sabemos o numero minimo de execuções de laço(loop).
+Exemplo:
+do{
+	alert("Entrei mesmo sem fazer verificação ;)");
+}while(false);
+//Ex1
+var i = 0;
+do{
+	alert("Dentro:"+i);
+	i++;
+}while(i < 4);
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+

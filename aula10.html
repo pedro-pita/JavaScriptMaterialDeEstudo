@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Aula 10 - JS Request AJAX</title>
+		<script type="text/javascript" src="js/aula10B.js"></script>
+	</head>
+	<body>
+		<a href="#" id="ajax">AJAX</a>
+		<div id="conteudo">
+		</div>
+	</body>
+</html>
+
+
+<!--
+Ajax - Asynchronous JavaScript and XML
+AJAX é carregar e renderizar uma página, utilizando recursos de scripts rodando pelo lado cliente, buscando e carregando dados em background sem a necessidade de reload da página
+
+
+Ajax não é mais que o conjunto de varias tecnologias, baseado em Javascript(sobre o Objeto DOM), CSS e XML.
+A função do ajax é em modo oculto fazer requisiçoes ao servidor de informação especifica.Deste modo não necessitamos de atualizar a pagina para receber dados vindo do servidor.
+
+Em comparação com requisições classicas em que o navegador tem requisitar toda a pagina ao servidor, com ajax o pre-carregamento de toda a logica de procesamento é lançado para o lado do cliente.
+Uma requisição feita ao servidor é feita atraves do Javascript de forma assincrona(não precisa de fazer atualização da pagina).
+Ficando o JS responsavel por tratar a informações carregada no load da pagina.
+Esta tecnica inicialmente torna o site mais lento, visto mais informação ter sido carregada, mas apos esse carregamento torna-se mais leve, porque apenas a informação requisitada é devolvida e não toda  a estrutura do site.
+
+Objeto responsavel  por esta gestão
+XMLHttpRequest
+
+Existem duas formas de requisição:
+Sincrona - O objeto espera a resposta do servidor para avançar.
+Assincrono- o objeto executa a requisição mas a rotina continua,(faz a nossa requisição em segundo plano).
+
+Problemas com modo sincrono, a requisição fica pendente e o utilizador não sabe se o browser travou ou esta à espera.
+-->

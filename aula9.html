@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Aula 9 - DOM CORE API</title>
+		<script type="text/javascript" src="js/aula9.js"></script>
+	</head>
+	<body>
+		<p id="intro">Paragrafo...</p>
+		<h3>Cabeçalho h3</h3>
+		<h3>Cabeçalho h3</h3>
+		<div>
+			<ul>
+				<li id="item1">item 1</li>
+				<li id="item2">item 2</li>
+				<li id="item3">item 3
+					<ul>
+						<li id="item31">item 31</li>
+						<li id="item32">item 32</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<span>Div 2</span>
+		</div>
+	</body>
+</html>
+<!--
+DOM CORE API
+Toda a manipulação é baseada em XML, logo é independente da linguagem de programação.
+
+A navegação pela nossa pagina:
+Cada tag html representa um nó da arvore.
+"Nós" principais:
+Documento - representa o documento
+Elemento - representa as tags(ex: body,div)
+Atributo - atributos dos elementos
+Texto: representa o texto contido nas nossas tags(ex: <h3>Texto do elemento</h3>)
+
+Leitura da arvore:
+Os elementos "nós" podem ser pais, filhos ou irmãos de outros "nós".
+Na nossa arvore o document tem como filhos o body e o head.
+O elemento p e h3 são filhos de body, sendo body o seu pai, desta forma p e h3 são irmãos.
+-------------------------------------------
+Para navegar é preciso identificar o parentesco dos nós:
+Pai = parent;
+Filho = child;
+Irmão= sibling;
+
+---------------------------------
+Acessos atraves das prop.:
+Node.childNodes: Para aceder a todos os nós filhos diretos de um determinado elemento.
+Node.FirstChild- este é o mesmo que aceder ao primeiro item da 'ChildNodes', isto é array(Element.childNodes[0])
+Node.lastChild- este é o mesmo que aceder ao ultimo item da 'ChildNodes', isto é array(Element.childNodes[length-1])
+Node.parentNode: Dá acesso ao nó pai atual, para aceder ao avô usariamos "Node.parentNode.parentNode"
+Node.nextSibling- acesso ao nó seguinte no mesmo nivel dentro da arvore DOM.
+Node.previousSibling- acesso ao ultimo nó no mesmo nivel dentro da arvore DOM.
+
+-->
+
+
+
+
+
+
+

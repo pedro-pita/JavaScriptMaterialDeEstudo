@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Aula 4 - Classe de Erros</title>
+		<script type="text/javascript" src="./js/aula4.js">
+		</script>
+	</head>
+	<body>
+		<p>Pedro Araújo</p>
+	</body>
+</html>
+
+<!--
+Estruturas de tratamento de excepções(erros).
+Classe Objeto Error- propriedades.
+Alguns métodos/prop.
+.message() - Retorna a msg de erro.
+.name - Retorna o nome ou o tipo de erro
+.toString - retorna o tipo e a mensagem do erro.
+
+Tipos de erro da propriedade name
+RangeError
+Este erro ocorre quando uma função recebe um argumento que excede os limites permitidos. Por exemplo, este erro ocorre se tentar construir um objeto Array com uma quantidade de itens que não seja um valor inteiro positivo válido.
+-------------
+ReferenceError
+Este erro ocorre quando uma referência inválida é detetada. Este erro ocorrerá, por exemplo, se uma determinada referência for null.
+---------------
+SyntaxError
+Este erro ocorre quando o código fonte é analisado e percebe-se que este não segue a sintaxe correta da linguagem. Este erro ocorrerá, por exemplo, se a função eval for chamada com um argumento que não é considerado um código JavaScript válido.
+------------------
+TypeError
+Este erro ocorre sempre que o tipo atual do operando não se encaixa no tipo esperado. Um exemplo disso ocorre quando uma chamada de função é feita em algo que não é um objeto ou é um objeto mas não suporta tal tipo de chamada.
+------------------
+URIError
+Este erro ocorre quando um Identificar Uniforme de Recursos - Uniform Resource Indicator (URI) inválido é detetado. Por exemplo, este erro pode ocorrer quando um caractere ilegal é encontrado numa string a ser codificada ou decodificada.
+--------------------------------------------
+Estrutura/Sintaxe do controlo de Erros
+
+try{
+	codigo critico.
+}catch(identificador de erro){
+	rotina de informação de erro
+}
+
+Rotina de execução:
+A estrutura tenta executar o código critico, caso retorne erro, será tratado no trecho catch() que captura esse erro e o devolve  sobre a forma colocada no parametro do catch.
+
+try{
+	var x = y;
+}catch(erro){
+	alert(erro.name + " - " + erro.message);
+	//alert(erro.toString());
+}
+----------------------------------------
+Método finally() - É executado sempre, caso haja erros ou não.
+try{
+	var x = y;
+}catch(erro){
+	alert(erro.toString());
+}finally{
+	alert("Fim do tratamento de Erro.");
+}
+--------------------------------------
+throw(lançar)- lança uma excepção, onde prevemos que de alguma forma irá(poderá) dar erro.
+
+var x = prompt("Numero maior que 10.");
+try{
+	if(x < 10){
+		throw "O numero introduzido foi inferior a 10";
+	}
+}catch(erro){
+	alert(erro.toString());
+}
+------------------------------------
+var x = prompt("Numero maior que 10.");
+try{
+	if(x < 10){
+		throw "Numero maior que 10.";
+	}
+	if(x < 5){
+		throw "ERROR INTERNAL: 505";
+	}
+}catch(erro){
+	if(erro == "ERROR INTERNAL: 505"){
+		alert("Valor inferir a 5");
+	}
+	//alert(erro.toString());
+}finally{
+	alert("Passou no teste com nota minima.");
+}
+-->
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Aula 7 - Objetos Cookies</title>
+		<script type="text/javascript" src="./js/cookie.js">
+		</script>
+		<script type="text/javascript" src="./js/aula7.js">
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+
+<!--
+Objeto Cookies - Sâo uma especie de variaveis que nos permitem guardar informação por um determinado tempo, deste modo tornamos os carregamentos na navegação mais eficiente e rapida, isto é , imaginem o ue seria em cada iteração fazer uma requisição http ao servidor de BD, tornaria o nosso site lendo e o servidor ficaria subcarregado.
+Ao armazenarmos cookies elas são armazenadas no proprio host(maquina cliente) sendo apenas lidas a cada requisição.
+
+Etapas de criação de um cookie:
+Método de gravação;
+Método de leitura.
+
+Sintaxe:
+document.write = 'testcookie; expires=Thu, 10 Aug 2017 20:23:12 UTC; path=/';
+----------------------------------------
+Função de gravação:
+function gravarCookie(nome, valor, dias){
+	var expires = "";
+	if(dias){
+		var date = new Date();
+		alert(date.setTime(date.getTime() + (dias*24*60*60*1000)));
+		expires = "; expires=" +date.toUTCString();
+	}
+	if(valor != "" && valor != null && valor != "null"){
+		document.write(nome+"="+ valor + "-" + expires);
+		document.cookie = nome + "=" + value + expires;
+	}
+}
+
+function lerCookie(nome){
+	var pNome = nome +"=";
+	var cookies = document.cookie.split(';');
+	for(var i=0; i < cookies.length; i++){
+		var c = cookies[i];
+		alert("c->"+c);
+		while(c.charAt(0) == ' '){
+			c = c.substring(1, c.length);
+		}
+		if(c.indexOf(pNome) == 0)
+			return c.substring(pNome.length, c.length);
+	}
+	return null;
+}
+
+
+function elimiarCookie(nome){
+	var camBits = location.pathname.split('/');
+	var camAtual = ' path=';
+	
+	document.cookie = nome + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+	
+	for(var i = 0; i < camBits.length; i++){
+		camAtual += ((camAtual.substr(-1) != '/') ? '/' : '') + camBits[i];
+		alert("elimiarCookie->"+camAtual);
+		document.cookie = nome + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;' + camAtual + ';';
+	}
+}
+
+Exemplo de invocação
+
+var nome = "Pedro";
+gravarCookie("nomeCookie",nome,1);
+var n = lerCookie("nomeCookie");
+alert(n);
+elimarCookie("nomeCookie");
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

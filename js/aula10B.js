@@ -49,8 +49,6 @@ window.onload = function(){
 		try{
 			// Iniciar o pedido com o metodo open(metodo de request(POST,GET,etc),URL de requisição, por defeito executa em modo assincrono(true));
 			//ajax.open("POST","./Aula 10 -Material/file.txt",true);
-			
-			
 			/* -------------------------------------- */
 			//Para o html seria:
 			ajax.open("POST","./Aula 10 -Material/file.xml");

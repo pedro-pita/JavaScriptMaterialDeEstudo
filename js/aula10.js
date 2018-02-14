@@ -1,7 +1,6 @@
 window.onload = function(){
 	document.getElementById("ajax").onclick = function(){
 		var ajax;// nova instancia de um objeto responsavel pela requisição ao servidor
-		
 		// codigo critico
 		try{
 			//  Opera, Firefox, Safari, Chome
@@ -34,7 +33,7 @@ window.onload = function(){
 		3 - em processo iterativo
 		4 - completo
 		---------------------------------
-		Código de estado na ersposta http
+		Código de estado na resposta http
 		200 - OK
 		*/
 		ajax.onreadystatechange = function(){

@@ -1,20 +1,20 @@
 var str = "Pedro é o meu nome";
-var regex = new RegExp("Pedro");
+var regex = new RegExp("Pedro"); //Se tiver a palavra Pedro com maiuscla
 //alert(regex.test(str));
 
 // Atraves do literal
 var str = "Pedro é o meu nome";
-var regex = /Pedro/;
+var regex = /Pedro/; //Se tiver a palavra Pedro com maiuscla
 //alert(regex.test(str));
 
 //Ignorar case Sen.
 var str = "Pedro é o meu nome";
-var regex = /Pedro/i;
+var regex = /Pedro/i; //Se tiver a palavra Pedro, i ignora case sensetive
 //alert(regex.test(str));
 
-var str = "Pedro é o meu nome";
-var regex = new RegExp("Pedro","i");
-//alert(regex.test(str));
+var str = "pedro é o meu nome";
+var regex = new RegExp("Pedro","i"); //Se tiver a palavra Pedro, i ignora case sensetive
+alert(regex.test(str));
 
 // Aninhar a expressão
 var redex = /Pedro/i.test("Pedro é o meu nome");

@@ -13,7 +13,7 @@ document.write(carro.lugares + "<br />")
 document.write(carro.cor+"<br />");*/
 //--------------------------------
 //Pelo prototype
-function liga(){
+/*function liga(){
 		this.ligado = true;
 }
 Carro.prototype.ligar = liga;
@@ -40,7 +40,7 @@ function Mota(velMax){
 var mota = new Mota(2300);
 document.write(mota.ligado+"<br />");
 mota.ligar();
-document.write(mota.ligado+"<br />");
+document.write(mota.ligado+"<br />");*/
 // Literal do objeto
 /*var Familia = {
 				nomeFamilia:"Pitas",
@@ -54,12 +54,12 @@ document.write(mota.ligado+"<br />");
 						nomeFilho:"Joana",
 						idadeFilho:43
 				}
-			  };
-document.write("<br />"+Familia.nomeFamilia + " tem no agregado " + Familia.qtAgregado + " elementos, vivem com " + Familia.vencimentoAgregado + "€, o primeiro filho chama-se " + Familia.filhos1.nomeFilho + " e tem "+ Familia.filhos1.idadeFilho + " anos");
-*/
+			  };*/
+//document.write("<br />"+Familia.nomeFamilia + " tem no agregado " + Familia.qtAgregado + " elementos, vivem com " + Familia.vencimentoAgregado + "€, o primeiro filho chama-se " + Familia.filhos1.nomeFilho + " e tem "+ Familia.filhos1.idadeFilho + " anos");
+
 // *******************************
 // Composição dos objetos
-
+/*
 function Familia(n,v){
 	this.nome = n;
 	this.vencimento = v;
@@ -74,12 +74,14 @@ var f2 = new Filho("Ana",34);
 familia.filhos1 = f1;
 familia.filhos2 = f2;
 document.write("<br />"+familia.nome+" vivem com"+familia.vencimento+"€, o 1 filho é o "+ familia.filhos1.nome+" e tem "+familia.filhos1.idade+" anos");
+*/
 //----------------------------------
 // Encapsulamento
-
-function Aquecedor(temp){
+/*function Aquecedor(temp){
 	var temperaturaMaxPermitida = 40;
 	var temperaturaMedia = 25;
+	this.temperaturaMaxPermitida = temperaturaMaxPermitida;
+	this.temperaturaMedia= temperaturaMedia;
 	if(temp > 0 && temp <= temperaturaMaxPermitida){
 		this.temperatura = temp;
 	}else{
@@ -91,12 +93,12 @@ function Aquecedor(temp){
 	}
 }
 
-var a = new Aquecedor(29);
-document.write("<br />"+a.temperatura);
-document.write("<br />"+a.temperaturaMaxPermitida);
+var a = new Aquecedor(32);
+document.write("<br />"+ a.temperatura);
+document.write("<br />"+ a.temperaturaMaxPermitida);*/
 //------------------------------
 //Herança
-document.write("<br />Herança<br />");
+/*document.write("<br /><br />Herança");
 function Pessoa(){
 	this.nome = "Sem nome";
 	this.temFilhos = false;
@@ -110,7 +112,8 @@ function Pessoa(){
 
 function Aluno(nota){
 	var notaMaxExame = 20;
-	var notaMinExame = 7;
+	this.notaMaxExame = notaMaxExame;
+	this.notaMinExame = 7;
 	var vaiExame = false;
 	if(nota > 7 && nota <= notaMaxExame){
 		this.notaFinal = nota;
@@ -123,52 +126,58 @@ function Aluno(nota){
 
 Aluno.prototype = new Pessoa();
 var aluno = new Aluno(9);
-document.write("<br />"+aluno.vaiExame);
-document.write("<br />"+aluno.notaMinExame);
-document.write("<br />"+aluno.notaFinal);
-document.write("<br />"+aluno.temFilhos);
+document.write("<br />O aluno vai a exame? "+aluno.vaiExame);
+document.write("<br />Nota minima exame: "+aluno.notaMinExame);
+document.write("<br />Nota maxima no exame: "+aluno.notaMaxExame);
+document.write("<br />Nota final do aluno: "+aluno.notaFinal);
+document.write("<br />O aluno tem filhos? "+aluno.temFilhos);
 aluno.criarFilhos();
-document.write("<br />"+aluno.temFilhos);
+document.write("<br />O aluno agora tem filhos? "+aluno.temFilhos);*/
 
 //**************************************
 /* Exemplo 2*/
 document.write("<br />Exemplo 2<br />");
 // Função construtora
 /*var Pessoa = function(n,c){
-	this.nome = n;
+	/*this.nome = n;
 	if(c){
 		this.contato = c;
 	}
 };*/
-// Adicionar metodos o objeto Pessoa
-/*var Pessoa = function(n,c){
-	this.nome = n;
+// Adicionar metodos o objeto Pessoa*var Pessoa = function(n,c){
+/*	this.nome = n;
 	if(c){
 		this.contato = c;
+	}else{
+		this.contato = "não foi inserido";
 	}
 	this._toString() = function(){
 		document.write("Nome:"+this.nome+" contato: "+this.contato);
 					   }
 };*/
 // Sobrescrevendo o prototype
-var Pessoa = function(n,c){
+/*var Pessoa = function(n,c){
 	this.nome = n;
 	if(c){
 		this.contato = c;
+	}else{
+		this.contato = "não foi inserido";
 	}
 };
 
 Pessoa.prototype = {
-	constructor: Pessoa,
-	_toString:function(){				document.write("_toString->Nome:"+this.nome+" contato: "+this.contato);
-			},
+	constructor: Pessoa,_toString:function(){
+		document.write("_toString->Nome:"+this.nome+" contato: "+this.contato);
+		},
 	imprimeNome:function(){
 		document.write("IN->Nome: "+this.nome);	
 	}
 };
 
-var p1 = new Pessoa("Pedro Araújo","98123123");
+var p1 = new Pessoa("Pedro Pita");
+var p2 = new Pessoa ("Henrique Mendes",98242424);
 p1._toString();
+p2._toString();*/
 //--------------------------------
 // Retorna o objeto literal, não é necessario o operador 'new'.
 
@@ -178,12 +187,15 @@ var Pessoa = function(nome,contato){
 		contato:contato,
 		imprimeNome: function(){
 			document.write("<br />imprimeNome->Nome: "+ this.nome);
+		},
+		imprimeContato : function(){
+			document.write("<br />Contato: "+ this.contato);
 		}
 	};
 };
-
-var p1 = Pessoa("Nova Pessoa","123123123");
+var p1 = Pessoa("Pedro Pita",9128391283);
 p1.imprimeNome();
+p1.imprimeContato();
 //alert(p1.nome);
 
 

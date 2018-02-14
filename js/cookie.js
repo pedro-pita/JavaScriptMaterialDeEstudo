@@ -1,4 +1,4 @@
-function gravarCookie(nome, value,days){
+function gravarCookie(nome, value, days){
 	var expires = "";
 	if(days){
 		var date = new Date();// criamos a var que irá receber a data atual
@@ -7,11 +7,12 @@ function gravarCookie(nome, value,days){
 	}
 	if(value != null && value != "null"){
 		document.cookie = nome + "=" + value + expires+ "; path=/";
-		// name + "=" + value + expires; -> desta forma a cookieserá criada na pasta onde estamos a trabalhar
+		//name + "=" + value + expires; -> desta forma a cookieserá criada na pasta onde estamos a trabalhar
 	}
 }
 
 function lerCookie(name){
+	alert(name);
 	var searchName = name + "=";// var que irá receber o valor das cookies guardadas, por forma a podermos comparar com o valor passado no argumento
 	var cookies = document.cookie.split(';');// quebra o array ficando apenas com o nome=valor_cookie
 	for(var i =0; i< cookies.length; i++){

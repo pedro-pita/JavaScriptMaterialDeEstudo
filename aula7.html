@@ -13,7 +13,7 @@
 </html>
 
 <!--
-Objeto Cookies - Sâo uma especie de variaveis que nos permitem guardar informação por um determinado tempo, deste modo tornamos os carregamentos na navegação mais eficiente e rapida, isto é , imaginem o ue seria em cada iteração fazer uma requisição http ao servidor de BD, tornaria o nosso site lendo e o servidor ficaria subcarregado.
+Objeto Cookies - Sâo uma especie de variaveis que nos permitem guardar informação por um determinado tempo, deste modo tornamos os carregamentos na navegação mais eficiente e rapida, isto é , imaginem o que seria em cada iteração fazer uma requisição http ao servidor de BD, tornaria o nosso site lento e o servidor ficaria subcarregado.
 Ao armazenarmos cookies elas são armazenadas no proprio host(maquina cliente) sendo apenas lidas a cada requisição.
 
 Etapas de criação de um cookie:
@@ -38,7 +38,7 @@ function gravarCookie(nome, valor, dias){
 }
 
 function lerCookie(nome){
-	var pNome = nome +"=";
+	var pNome = nome + "=";
 	var cookies = document.cookie.split(';');
 	for(var i=0; i < cookies.length; i++){
 		var c = cookies[i];
@@ -51,7 +51,6 @@ function lerCookie(nome){
 	}
 	return null;
 }
-
 
 function elimiarCookie(nome){
 	var camBits = location.pathname.split('/');
